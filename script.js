@@ -1,50 +1,75 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+var passwordMin = 0;
 
-  passwordText.value = password;
+var passwordMax = 0;
+
+var uppercase = ["A", "B", "C", "D", "E", "F"];
+
+var randomUppercase = Math.floor(Math.random() * uppercase.length);
+
+//console.log(uppercase[randomUppercase]);
+
+var lowercase = ["a", "b", "c", "d", "e", "f"];
+
+var randomLowercase = Math.floor(Math.random() * lowercase.length);
+
+//console.log(lowercase[randomLowercase]);
+
+var special = ["!", "@", "#", "$", "%", "&", "?"];
+
+var randomSpecial = Math.floor(Math.random() * special.length);
+
+//console.log(special[randomSpecial]);
+
+var numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+var randomNumeric = Math.floor(Math.random() * numeric.length);
+
+//console.log(numeric[randomNumeric]);
+
+var characters = [
+  uppercase[randomUppercase],
+  lowercase[randomLowercase],
+  special[randomSpecial],
+  numeric[randomNumeric],
+];
+
+console.log(characters);
+
+//write a for loop to iterate through characters multiple times
+
+//write function that tests for password length
+
+function writePassword() {
+  var password = "";
+  characters.forEach(generatePassword);
+  document.getElementById("password").innerHTML = password;
+  function generatePassword(value) {
+    password += value;
+  }
 }
 
+// Write password to the #password input
+/*function writePassword() {
+  var password = generatePassword(characters);
+  var passwordText = document.querySelector("#password");
+  // console.log("Your password is " + password);
+  passwordText.value = password;
+}
+*/
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// logical comparisons to use
+//use array method function to run through all objects in the array
 
-// does expression below take into account decimals ie 7.01 or does it go by integers?
-// password.length > 7
-// how do you do greater than or equal to?
-// password.length < 8
+//displays password
+/*let txt = "";
+characters.forEach(generatePassword);
+document.getElementById("password").innerHTML = txt;
 
-// uppercase = "A", "B", "C"...
-// lowercase = "a", "b", "c"...
-// specialCharacter = "!", "@", "#", "$", "%", "&", "?"
-// numeric = 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
-
-// can more than two comparisons be evaluated at once?
-// uppercase && lowercase && specialCharacter && numeric
-
-// how do you prevent a space from being used in the password?
-
-/* if password.length < 8 {
-    then alert "Password does not meet minimum length."
-}*/
-
-/* if != uppercase {
-    then alert "Password must contain an uppercase character."
-}*/
-
-/* if != lowercase {
-    then alert "Password must contain a lowercase character."
-}*/
-
-/* if != specialCharacter {
-    then alert "Password must contain a special character."
-}*/
-
-/* if != numeric {
-    then alert "Password must contain a numeric character."
-}*/
+function generatePassword(value, index, array) {
+  txt += value;
+}
+*/

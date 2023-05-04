@@ -5,6 +5,8 @@ var passwordMin = 0;
 
 var passwordMax = 0;
 
+var text = "";
+
 var uppercase = ["A", "B", "C", "D", "E", "F"];
 
 var randomUppercase = Math.floor(Math.random() * uppercase.length);
@@ -28,15 +30,69 @@ var numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var randomNumeric = Math.floor(Math.random() * numeric.length);
 
 //console.log(numeric[randomNumeric]);
-
-var characters = [
-  uppercase[randomUppercase],
-  lowercase[randomLowercase],
-  special[randomSpecial],
-  numeric[randomNumeric],
-];
-
+//when we ask the user if they want it
+var characters = [];
+var userWantsUppercase = confirm("Do you want uppercase");
+if (userWantsUppercase == true) {
+  characters = characters.concat(uppercase);
+}
 console.log(characters);
+var userWantsLowercase = confirm("Do you want lowercase");
+
+if (userWantsLowercase == true) {
+  characters = characters.concat(lowercase);
+}
+console.log(characters);
+var userWantsSpecial = confirm("Do you want special");
+
+if (userWantsSpecial == true) {
+  characters = characters.concat(special);
+}
+console.log(characters);
+var userWantsNumeric = confirm("Do you want numeric");
+
+if (userWantsNumeric == true) {
+  characters = characters.concat(numeric);
+}
+console.log(characters);
+
+var passwordLength = 8;
+
+var finalPassword = "";
+for (var i = 0; i < passwordLength; i++) {
+  var randomIndex = Math.floor(Math.random() * characters.length);
+  finalPassword += characters[randomIndex];
+}
+console.log(finalPassword);
+//code below just shows one element and not a list of four random elements
+/*var randomCharacters = Math.floor(Math.random() * characters.length);
+console.log(characters[randomCharacters]);
+*/
+
+/*
+var uppercase = ["A", "B", "C", "D", "E", "F"];
+var lowercase = ["a", "b", "c", "d", "e", "f"];
+var special = ["!", "@", "#", "$", "%", "&", "?"];
+var numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+var text = "";
+for (var i = 0; i < uppercase.length; i++) {
+  text += uppercase[i];
+}
+
+for (var i = 0; i < lowercase.length; i++) {
+  text += lowercase[i];
+}
+
+for (var i = 0; i < special.length; i++) {
+  text += special[i];
+}
+
+for (var i = 0; i < numeric.length; i++) {
+  text += numeric[i];
+}
+console.log(text);
+*/
 
 //write a for loop to iterate through characters multiple times
 
@@ -51,14 +107,6 @@ function writePassword() {
   }
 }
 
-// Write password to the #password input
-/*function writePassword() {
-  var password = generatePassword(characters);
-  var passwordText = document.querySelector("#password");
-  // console.log("Your password is " + password);
-  passwordText.value = password;
-}
-*/
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 

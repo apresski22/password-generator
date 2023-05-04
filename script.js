@@ -1,10 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var passwordMin = 0;
-
-var passwordMax = 0;
-
 var text = "";
 
 var uppercase = ["A", "B", "C", "D", "E", "F"];
@@ -32,24 +28,24 @@ var randomNumeric = Math.floor(Math.random() * numeric.length);
 //console.log(numeric[randomNumeric]);
 //when we ask the user if they want it
 var characters = [];
-var userWantsUppercase = confirm("Do you want uppercase");
+var userWantsUppercase = confirm("Do you want an uppercase character?");
 if (userWantsUppercase == true) {
   characters = characters.concat(uppercase);
 }
 console.log(characters);
-var userWantsLowercase = confirm("Do you want lowercase");
+var userWantsLowercase = confirm("Do you want lowercase character?");
 
 if (userWantsLowercase == true) {
   characters = characters.concat(lowercase);
 }
 console.log(characters);
-var userWantsSpecial = confirm("Do you want special");
+var userWantsSpecial = confirm("Do you want a special character?");
 
 if (userWantsSpecial == true) {
   characters = characters.concat(special);
 }
 console.log(characters);
-var userWantsNumeric = confirm("Do you want numeric");
+var userWantsNumeric = confirm("Do you want a numeric character?");
 
 if (userWantsNumeric == true) {
   characters = characters.concat(numeric);
@@ -57,67 +53,43 @@ if (userWantsNumeric == true) {
 console.log(characters);
 
 var passwordLength = 8;
-
-var finalPassword = "";
+var password = "";
+//function generatePassword(characters) {
 for (var i = 0; i < passwordLength; i++) {
   var randomIndex = Math.floor(Math.random() * characters.length);
-  finalPassword += characters[randomIndex];
+  password += characters[randomIndex];
 }
-console.log(finalPassword);
-//code below just shows one element and not a list of four random elements
-/*var randomCharacters = Math.floor(Math.random() * characters.length);
-console.log(characters[randomCharacters]);
+
+console.log(password);
+
+/*function writePassword(password) {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  console.log("Your password is " + password);
+  passwordText.value = password;
+}
 */
 
-/*
-var uppercase = ["A", "B", "C", "D", "E", "F"];
-var lowercase = ["a", "b", "c", "d", "e", "f"];
-var special = ["!", "@", "#", "$", "%", "&", "?"];
-var numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-
-var text = "";
-for (var i = 0; i < uppercase.length; i++) {
-  text += uppercase[i];
-}
-
-for (var i = 0; i < lowercase.length; i++) {
-  text += lowercase[i];
-}
-
-for (var i = 0; i < special.length; i++) {
-  text += special[i];
-}
-
-for (var i = 0; i < numeric.length; i++) {
-  text += numeric[i];
-}
-console.log(text);
-*/
-
-//write a for loop to iterate through characters multiple times
-
-//write function that tests for password length
-
-function writePassword() {
-  var password = "";
-  characters.forEach(generatePassword);
-  document.getElementById("password").innerHTML = password;
+/*function writePassword() {
+  var finalPassword = "";
+  password.forEach(generatePassword);
+  document.getElementById("password").innerHTML = finalPassword;
   function generatePassword(value) {
     password += value;
   }
 }
-
+*/
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//use array method function to run through all objects in the array
-
 //displays password
+
 /*let txt = "";
-characters.forEach(generatePassword);
+finalPassword.forEach(generatePassword);
 document.getElementById("password").innerHTML = txt;
 
-function generatePassword(value, index, array) {
+function generatePassword(value) {
   txt += value;
 }
+
 */

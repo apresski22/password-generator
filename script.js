@@ -73,7 +73,7 @@ if (passwordLength < 8) {
   prompt("Please choose a length between 8-128");
 } else if (passwordLength > 128) {
   prompt("Please choose a length between 8-128");
-} else passwordOptions();
+} else passwordOptions;
 
 function passwordOptions() {
   var userWantsUppercase = confirm("Do you want uppercase characters?");

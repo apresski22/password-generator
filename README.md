@@ -5,7 +5,8 @@ The Password Generator is an application for generating random passwords based o
 # installation
 
 No installation necessary. The application is available at the following URL:
-screenshot and live url here
+
+https://apresski22.github.io/password-generator/
 
 # support
 

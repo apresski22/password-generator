@@ -1,6 +1,7 @@
 # password-generator
 
 The Password Generator is an application for generating random passwords based on the user's selected criteria. The criteria options are length of the password between 8 and 128 characters, uppercase and lowercase letters, numbers, and special characters.
+![password-generator-screenshot](https://user-images.githubusercontent.com/129121040/236366601-46165ef6-8e21-4f56-9918-1259136415b6.png)
 
 # installation
 
